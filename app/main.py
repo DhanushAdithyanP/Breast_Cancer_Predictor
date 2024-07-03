@@ -37,8 +37,8 @@ def add_sidebar():
     return input_dict
 
 def add_predictions(input_data):
-    model = pickle.load(open("model_1.pkl", "rb"))
-    scaler = pickle.load(open("scaler.pkl", "rb"))
+    model = pickle.load(open("Models(pkl)/model_1.pkl", "rb"))
+    scaler = pickle.load(open("Models(pkl)/scaler.pkl", "rb"))
     
     input_array = np.array([input_data[key] for key in input_data]).reshape(1, -1)
     
