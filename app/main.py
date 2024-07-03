@@ -74,16 +74,16 @@ def main():
     
     column_info = {
         'recall_score': {
-            'image_path': '../Plots/3.png'
+            'image_path': 'Plots/3.png'
         },
         'mean_radius': {
-            'image_path': '../Plots/1.png'
+            'image_path': 'Plots/1.png'
         },
         'jointplot': {
-            'image_path': '../Plots/4.png'
+            'image_path': 'Plots/4.png'
         },
         'violinplot': {
-            'image_path': '../Plots/5.png'
+            'image_path': 'Plots/5.png'
         }
     }
 
