@@ -6,7 +6,7 @@ import numpy as np
 def add_sidebar():
     st.sidebar.header("Cell Nuclei Measurements")
     
-    data = pd.read_csv('modified_data.csv')
+    data = pd.read_csv('Data/modified_data.csv')
     
     slider_labels = [
         ('Mean Radius', 'radius_mean'),
