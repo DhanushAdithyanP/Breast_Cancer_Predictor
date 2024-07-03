@@ -6,7 +6,7 @@ import numpy as np
 def add_sidebar():
     st.sidebar.header("Cell Nuclei Measurements")
     
-    data = pd.read_csv('../Data/modified_data.csv')
+    data = pd.read_csv('modified_data.csv')
     
     slider_labels = [
         ('Mean Radius', 'radius_mean'),
@@ -37,8 +37,8 @@ def add_sidebar():
     return input_dict
 
 def add_predictions(input_data):
-    model = pickle.load(open("../Models(pkl)/model_1.pkl", "rb"))
-    scaler = pickle.load(open("../Models(pkl)/scaler.pkl", "rb"))
+    model = pickle.load(open("model_1.pkl", "rb"))
+    scaler = pickle.load(open("scaler.pkl", "rb"))
     
     input_array = np.array([input_data[key] for key in input_data]).reshape(1, -1)
     
@@ -48,7 +48,6 @@ def add_predictions(input_data):
     prob_benign = model.predict_proba(input_array_scaled)[0][0] * 100
     prob_malignant = model.predict_proba(input_array_scaled)[0][1] * 100
 
-    # HTML and CSS for styling the prediction box
     st.markdown("""
     <div style='background-color: rgba(0, 0, 0, 2); padding: 20px; border: 2px solid #ccc; border-radius: 10px; text-align: center; color: white;'>
         <h2>The cell cluster is:</h2>
