@@ -2,6 +2,8 @@
 
 A machine learning project to predict breast cancer using the Wisconsin Breast Cancer dataset.
 
+Check out the [Breast Cancer Predictor Web App](https://bcp-adithyan.streamlit.app/) for a user-friendly interface.
+
 ## Table of Contents
 
 1. [Introduction](##Introduction)
