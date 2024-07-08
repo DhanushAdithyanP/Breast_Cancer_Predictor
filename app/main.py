@@ -9,17 +9,17 @@ def add_sidebar():
     data = pd.read_csv('Data/modified_data.csv')
     
     slider_labels = [
-        ('Mean Radius', 'radius_mean'),
-        ('Mean Texture', 'texture_mean'),
-        ('Mean Smoothness', 'smoothness_mean'),
-        ('Mean Compactness', 'compactness_mean'),
-        ('Mean Symmetry', 'symmetry_mean'),
-        ('Radius Standard Error', 'radius_se'),
-        ('Texture Standard Error', 'texture_se'),
-        ('Smoothness Standard Error', 'smoothness_se'),
-        ('Compactness Standard Error', 'compactness_se'),
-        ('Symmetry Standard Error', 'symmetry_se'),
-        ('Fractal Dimension Standard Error', 'fractal_dimension_se')
+        ('Mean Radius (mm)', 'radius_mean'),
+        ('Mean Texture (grayscale value)', 'texture_mean'),
+        ('Mean Smoothness (unitless)', 'smoothness_mean'),
+        ('Mean Compactness (unitless)', 'compactness_mean'),
+        ('Mean Symmetry (unitless)', 'symmetry_mean'),
+        ('Radius Standard Error (mm)', 'radius_se'),
+        ('Texture Standard Error (grayscale value)', 'texture_se'),
+        ('Smoothness Standard Error (unitless)', 'smoothness_se'),
+        ('Compactness Standard Error (unitless)', 'compactness_se'),
+        ('Symmetry Standard Error (unitless)', 'symmetry_se'),
+        ('Fractal Dimension Standard Error (unitless)', 'fractal_dimension_se')
     ]
     
     input_dict = {}
@@ -87,17 +87,15 @@ def main():
         }
     }
 
-    # Streamlit app layout
     st.markdown("<h1 style='text-align: center;'>Breast Cancer Predictor</h1>", unsafe_allow_html=True)
     
     add_predictions(input_data)
     
     st.markdown("<h2 style='text-align: center;'>Insights</h2>", unsafe_allow_html=True)
     
-    # Display information for each column
     for key, info in column_info.items():
         st.image(info['image_path'], use_column_width=True)
-        st.write("")  # Add some space between sections if needed
+        st.write("") 
     
 if __name__ == '__main__':
     main()
